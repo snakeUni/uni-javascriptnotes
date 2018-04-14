@@ -8,7 +8,7 @@ function delay(miliseconds) {
 }
 function timeoutPromise(promise, miliseconds) {
 	var timeout = delay(miliseconds).then(() => {
-		throw new Error(`request timed out after ${seconds}ms`)
+		throw new Error(`request timed out after ${miliseconds}ms`)
 	})
 	return Promise.race([promise, timeout]);
 }
