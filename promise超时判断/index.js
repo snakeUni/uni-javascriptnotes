@@ -22,6 +22,9 @@ function request(url, method) {
 				if(xhr.status == 200) {
 					try {
 						var response = xhr.responseText;
+						if(typeof response !== 'object') {
+							response = JSON.parse(response);
+						}
 						resolve(response);
 					} catch(e) {
 						reject(e)
