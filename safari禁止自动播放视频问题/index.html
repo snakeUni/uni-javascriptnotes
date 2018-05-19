@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<!-- preview.mp4是没有音轨的 -->
+	<!-- <div class="test1">
+		<div class="video">
+			<video autoplay width="300" height="200">
+				<source src="./preview.mp4" type="video/mp4">不支持video
+			</video>
+		</div>
+		<div class="audio">
+			<audio autoplay>
+				<source src="./jay.mp3" type="audio/mp3">不支持audio
+			</audio>
+		</div>
+	</div> -->
+	
+	<div class="test2">
+		<div class="video">
+			<video autoplay width="300" height="200" muted>
+				<source src="./father.mp4" type="video/mp4">不支持video
+			</video>
+		</div>
+		<div class="audio">
+			<audio autoplay>
+				<source src="./jay.mp3" type="audio/mp3">
+				<p>Browser too old to support HTML5 audio? How depressing!</p>
+			</audio>
+		</div>
+	</div>
+
+	<!-- 使用AudioContext -->
+	<div class="test3 audio-context">
+		<button id="button">经过我</button>
+	</div>
+	<script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
