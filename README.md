@@ -6,3 +6,4 @@ js随记包括设计模式，数组去重，promise超时判断等
 + [js内存管理](https://mp.weixin.qq.com/s/NkVaY1usOBQ4-if2mmmi3w)
 + [JavaScript使用mediaDevices API选择摄像头](https://mp.weixin.qq.com/s/jCw_qWf5fHKumRhhTDxMcw)
 + [图像识别在测试中的应用](https://mp.weixin.qq.com/s/g_09D7zX7XOY2-Swf3nvVA)
++ [safari音视频无法自动播放](https://fed.renren.com/2018/05/13/audio-auto-play/)
