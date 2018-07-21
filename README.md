@@ -12,3 +12,4 @@ js随记包括设计模式，数组去重，promise超时判断等
 + [实现 React Fiber 架构](https://zhuanlan.zhihu.com/p/37098539?utm_source=wechat_session&utm_medium=social)
 + [javaScript引擎基础](https://zhuanlan.zhihu.com/p/38202123)
 + [webpack4最佳实践](https://github.com/ProtoTeam/blog/blob/master/201806/3.md)
++ [规范化开发git hook](https://mp.weixin.qq.com/s/xQXOw4YxVc3WtowxxVMxsg)
