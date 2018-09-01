@@ -15,3 +15,5 @@ js随记包括设计模式，数组去重，promise超时判断等
 + [规范化开发git hook](https://mp.weixin.qq.com/s/xQXOw4YxVc3WtowxxVMxsg)
 + [Life of a Pixel，让你更透彻知道浏览器是如何工作](https://mp.weixin.qq.com/s/87OYpou4ynpvYlcExEO40w)
 + [Web 推送通知](https://github.com/yued-fe/y-translation/blob/master/en/web-push-notifications/introduction.md)
++ [一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
++ [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
