@@ -13,3 +13,4 @@ js随记包括设计模式，数组去重，promise超时判断等
 + [javaScript引擎基础](https://zhuanlan.zhihu.com/p/38202123)
 + [webpack4最佳实践](https://github.com/ProtoTeam/blog/blob/master/201806/3.md)
 + [规范化开发git hook](https://mp.weixin.qq.com/s/xQXOw4YxVc3WtowxxVMxsg)
++ [Life of a Pixel，让你更透彻知道浏览器是如何工作](https://mp.weixin.qq.com/s/87OYpou4ynpvYlcExEO40w)
