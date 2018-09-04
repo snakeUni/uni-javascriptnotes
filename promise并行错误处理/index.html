@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    前言
+    存在这样的一个场景，就是此时有多个请求是，请求之间并不存在相互依赖的关系，所以需要实现这样的一个需求
+    在其中一个请求出问题的情况下 不影响其他两个请求。。这样该怎么做
+   -->
+   <script>
+    /*  
+    * 其中第一种做法就是  直接写三个请求，三个请求各自处理自己的数据，这样的写法是没问题的。
+    * 我们这里主要是讲用promise应该怎么做。
+    */
+    // 第一种正常的写法，此时，a, b, c是三个异步请求
+    // 我们直接调用这三个各自处理各自的就好了，这样是没问题的
+    const a = () => {}
+    const b = () => {}
+    const c = () => {}
+    a(), b(), c()
+
+    // 第二种那就是通过promise来做,我们知道promise.all函数就是传递一个数组进去，
+    // 在里面的请求就是各自请求各自的，没有先后关系。如果全部请求完成。没有错误那么
+    // 就resolve了返回三个请求的结果，但是只要其中有一个发生错误，那么此时就被reject了，那么catch的结果
+    // 就是第一个发生错误的值，但是你想让请求成功的依然 可以渲染出相应的数据，此时应该怎么办？凉了？
+    // 那让我们看一下promise的做法吧
+    // 我们仍然用上面的三个函数，并且假设上面三个函数 返回的都是promise
+
+    // 先定义一个数据把
+    const array = [a(), b(), c()]
+    // 我们提前map下，然后我们不妨捕捉到这个错误
+    const promiseArray = array.map(item => {
+      item.catch(error => {})
+    })
+    // 此时我们在promise.all   那么此时的状态就是resolve的状态了，失败的
+    // 我们可以不管，成功的数据  我们仍然可以拿到去渲染
+    const value = Promise.all(promiseArray).then(result => {
+      console.log(result)
+    })
+
+
+    //这是一个demo
+    /*
+    const getPromise1 = function() {
+      return new Promise(resolve => {
+        resolve(1)
+      })
+    }
+    const getPromise2 = function() {
+      return new Promise((resolve, reject) => {
+        reject(3)
+      })
+    }
+    const getPromise3 = function() {
+      return new Promise((resolve, reject) => {
+        reject(1)
+      })
+    }
+    const array = [getPromise1(), getPromise2(), getPromise3()]
+    const promiseArray = array.map(item => {
+      return item.catch(error => {
+      })
+    })
+    const value = Promise.all(promiseArray).then(result => {
+      console.log(result)
+    })
+    */
+   </script>
+</body>
+</html>
