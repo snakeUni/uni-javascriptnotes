@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+/*
+场景:实现自动创建tree
+var tree = Tree();
+tree.branch1.branch2.twig = "green";
+{ branch1: { branch2: { twig: "green" } } }
+tree.branch1.branch3.twig = "yellow";
+{ branch1: { branch2: { twig: "green" },
+             branch3: { twig: "yellow" }}}
+所有中间对象branch1、branch2和branch3都可以自动创建
+*/
+function Tree() {
+  return new Proxy({}, handler);
+}
+var handler = {
+  get: function (target, key, receiver) {
+    if (!(key in target)) {
+      target[key] = Tree();  // 自动创建一个子树
+    }
+    return Reflect.get(target, key, receiver);
+  }
+};
+
+const tree = new Tree()
+tree.branch1.branch2.twig = "green";
+console.log(tree.branch1.branch2.twig)
+tree.branch1.branch3.twig = "yellow";
+console.log(tree.branch1.branch3.twig)
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+<script type="text/javascript">
+	var target = {}
+	var handler = {}
+	var {proxy, revoke} = Proxy.revocable(target, handler)
+	proxy.a = 'b'
+	console.log(proxy.a)
+	// <- 'b'
+	revoke()
+	revoke()
+	revoke()
+	console.log(proxy.a)
+</script>
+
+</body>
+</html>
