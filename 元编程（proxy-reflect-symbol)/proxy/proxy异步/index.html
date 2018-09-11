@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+  const callback = () => console.log('Do something...');
+
+  const asyncFunc = (cb) => {
+    setTimeout(cb, 1000);
+  }
+
+  const noProxy = () => {
+    console.log('**********no-proxy**********')
+     // 会同时输出
+    asyncFunc(callback);
+    asyncFunc(callback);
+    asyncFunc(callback);
+  }
+
+  noProxy()
+
+  const createAsyncQueueProxy = (asyncFunc) => {
+  let promise = null;
+  return new Proxy(asyncFunc, {
+    apply(target, context, [cb, ...args]) {
+      promise = Promise
+        .resolve(promise)
+        .then(() => new Promise(resolve => {
+          Reflect.apply(asyncFunc, this, [() => {
+            cb();
+            resolve();
+          }, ...args]);
+        }));
+    }
+  });
+};
+
+const timeoutProxy = createAsyncQueueProxy(asyncFunc);
+
+const proxy = () => {
+  console.log('*********proxy*********')
+  timeoutProxy(callback);
+  timeoutProxy(callback);
+  timeoutProxy(callback);
+}
+proxy()
+
+</script>
+  
+</body>
+</html>
