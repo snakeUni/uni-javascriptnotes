@@ -19,3 +19,4 @@ js随记包括设计模式，数组去重，promise超时判断等
 + [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
 + [前端性能优化：2018年JavaScript开销及优化工具和方法](https://juejin.im/entry/5b849efde51d4538e018f90c)
 + [performance](https://mp.weixin.qq.com/s/UYcMeqZGblupVpGue-IThg)
++ [用微前端的方式搭建类单页应用](https://juejin.im/post/5b921b415188255c9031b0c3)
