@@ -21,3 +21,6 @@ js随记包括设计模式，数组去重，promise超时判断等
 + [performance](https://mp.weixin.qq.com/s/UYcMeqZGblupVpGue-IThg)
 + [用微前端的方式搭建类单页应用](https://juejin.im/post/5b921b415188255c9031b0c3)
 + [面向体验的重构优化](https://zhuanlan.zhihu.com/p/44203056)
+
+## 其他学习资源
++ [Typescript学习资源合集](https://juejin.im/entry/5b9e4a135188255c3a2d3695)
